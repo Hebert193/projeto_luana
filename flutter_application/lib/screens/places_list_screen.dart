@@ -1,29 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/utils/app_routes.dart';
 
-class PlaceFormScreen extends StatelessWidget {
-  const PlaceFormScreen({key? key}) : super(key: key);
-
-  @override
-  State<PlaceFormScreen> createState() => _PlaceFormScreenState();
-}
-
-  class _PlaceFormScreenState extends State<PlaceFormScreen> {
+class PlacesListScreen extends StatelessWidget {
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Novo Lugar'),
+        title: const Text('Meus Lugares'),
         actions: [
           IconButton(
-            onPressed: () {
-              navigation.of(context).pushNamed(AppRoutes.placeForm);
-            },
             icon: const Icon(Icons.add),
-          ),
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRoutes.placeForm);
+            },
+          )
         ],
       ),
       body: const Center(
-        child: Text('Formulário'),
+        child: CircularProgressIndicator(),
       ),
     );
   }
